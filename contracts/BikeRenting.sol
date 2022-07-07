@@ -2,7 +2,8 @@
 pragma solidity >=0.4.22 <0.9.0;
 
 contract BikeRenting {
-  address public owner;
+  address payable public owner;
+  address payable public client;
   mapping(address => uint) public balances;
   string public RoyalEnfield;
   uint public RoyalEnfieldPrice;
@@ -16,7 +17,7 @@ contract BikeRenting {
   uint public DucatiPrice;
 
   constructor() {
-    owner = msg.sender;
+    owner = payable( msg.sender);
     RoyalEnfield = "Royal Enfield Meteor 350";
     RoyalEnfieldPrice = 1200;
     Triumph = "Triumph Trident 660";
@@ -27,6 +28,11 @@ contract BikeRenting {
     ApriliaPrice = 1000;
     Ducati = "Ducati Multistrada V4";
     DucatiPrice = 1800;
+  }
+
+  function rentRoyal(uint _value, address payable _client) public {
+    _value = RoyalEnfieldPrice;
+    _client.transfer(_value);
   }
 
 }
