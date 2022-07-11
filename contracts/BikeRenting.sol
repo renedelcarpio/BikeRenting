@@ -4,6 +4,7 @@ pragma solidity >=0.4.22 <0.9.0;
 contract BikeRenting {
   address payable public owner;
   address payable public client;
+  uint public EthValue = 1153;
   mapping(address => uint) public balances;
   mapping(uint => Bike) public bikes;
 
@@ -18,70 +19,70 @@ contract BikeRenting {
 
   function rentRoyalAllDay(uint _amount) public payable {
     bikes[0].name = "Royal Enfield Meteor 350";
-    bikes[0].price = 1200;
+    bikes[0].price = 1200 / EthValue;
     require(_amount == bikes[0].price);
     balances[msg.sender] += _amount;
   }
 
   function rentRoyalHalfDay(uint _amount) public payable {
     bikes[1].name = "Royal Enfield Meteor 350";
-    bikes[1].price = 600;
+    bikes[1].price = 600 / EthValue;
     require(_amount == bikes[0].price);
     balances[msg.sender] += _amount;
   }
 
   function rentTriumphAllDay(uint _amount) public payable {
     bikes[2].name = "Triumph Trident 660";
-    bikes[2].price = 800;
+    bikes[2].price = 800 / EthValue;
     require(_amount == bikes[0].price);
     balances[msg.sender] += _amount;
   }
 
   function rentTriumphHalfDay(uint _amount) public payable {
     bikes[3].name = "Triumph Trident 660";
-    bikes[3].price = 400;
+    bikes[3].price = 400 / EthValue;
     require(_amount == bikes[0].price);
     balances[msg.sender] += _amount;
   }
 
   function rentBmwAllDay(uint _amount) public payable {
     bikes[4].name = "BMW R 1250 GS";
-    bikes[4].price = 1400;
+    bikes[4].price = 1400 / EthValue;
     require(_amount == bikes[0].price);
     balances[msg.sender] += _amount;
   }
 
   function rentBmwHalfDay(uint _amount) public payable {
     bikes[5].name = "BMW R 1250 GS";
-    bikes[5].price = 700;
+    bikes[5].price = 700 / EthValue;
     require(_amount == bikes[0].price);
     balances[msg.sender] += _amount;
   }
 
   function rentApriliaAllDay(uint _amount) public payable {
     bikes[6].name = "Aprilia RS 660";
-    bikes[6].price = 1000;
+    bikes[6].price = 1000 / EthValue;
     require(_amount == bikes[0].price);
     balances[msg.sender] += _amount;
   }
 
   function rentApriliaHalfDay(uint _amount) public payable {
     bikes[7].name = "Aprilia RS 660";
-    bikes[7].price = 500;
+    bikes[7].price = 500 / EthValue;
     require(_amount == bikes[0].price);
     balances[msg.sender] += _amount;
   }
 
   function rentDucatiAllDay(uint _amount) public payable {
     bikes[8].name = "Ducati Multistrada V4";
-    bikes[8].price = 1800;
+    bikes[8].price = 1800 / EthValue;
     require(_amount == bikes[0].price);
     balances[msg.sender] += _amount;
   }
 
   function rentDucatiHalfDay(uint _amount) public payable {
     bikes[9].name = "Ducati Multistrada V4";
-    bikes[9].price = 900;
+    bikes[9].price = 900 / EthValue;
     require(_amount == bikes[0].price);
     balances[msg.sender] += _amount;
   }
